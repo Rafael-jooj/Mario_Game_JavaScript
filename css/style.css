@@ -14,11 +14,37 @@
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
+.menu{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    background: none;
+    color: rgb(161, 36, 36);
+    border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.game-over{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    display: none;
+    background: none;
+    color: rgb(161, 36, 36);
+    border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 .pipe{
     width: 80px;
     position: absolute;
     bottom: 0;
-    animation: pipe-animated 1.5s linear infinite;
 }
 
 .mario{
@@ -27,15 +53,23 @@
     bottom: 0;
 }
 
+.cloud{
+    position: absolute;
+    width: 500px;
+}
+
 .jump{
     animation: jump 500ms ease-out;
 }
 
-.cloud{
-    position: absolute;
-    width: 500px;
+.pipe-move{
+    animation: pipe-animated 1.5s linear infinite;
+}
+
+.cloud-move{
     animation: cloud-animated 20s infinite linear;
 }
+
 
 @keyframes pipe-animated {
     from{

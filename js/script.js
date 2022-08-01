@@ -1,34 +1,50 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const cloud = document.querySelector('.cloud');
+const menu = document.querySelector('.menu');
+const over = document.querySelector('.game-over');
 
-function jump(){
-    mario.classList.add('jump');
+function inicio(){
 
-    setTimeout(()=>{
-        mario.classList.remove('jump');
-    } , 500)
-}
+    menu.style.display = 'none';
 
-const loop = setInterval(()=>{
+    pipe.classList.add('pipe-move');
+    cloud.classList.add('cloud-move');
 
-    const pipePosition = pipe.offsetLeft;
-    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
-
-    if(pipePosition <= 110 && pipePosition > -10 && marioPosition <= 80){
-
-        pipe.style.animation = 'none';
-        pipe.style.left = `${pipePosition}px`;
-
-        mario.style.animation = 'none';
-        mario.style.bottom = `${marioPosition}px`;
-
-        mario.src = './images/game-over.png';
-        mario.style.width = '60px';
-        mario.style.marginLeft = '40px';
-
-        clearInterval(loop);
+    function jump(){
+        mario.classList.add('jump');
+    
+        setTimeout(()=>{
+            mario.classList.remove('jump');
+        } , 500)
     }
     
-}, 10);
+    const loop = setInterval(()=>{
+    
+        const pipePosition = pipe.offsetLeft;
+        const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
+    
+        if(pipePosition <= 110 && pipePosition > -10 && marioPosition <= 80){
+    
+            pipe.style.animation = 'none';
+            pipe.style.left = `${pipePosition}px`;
+    
+            mario.style.animation = 'none';
+            mario.style.bottom = `${marioPosition}px`;
+    
+            mario.src = './images/game-over.png';
+            mario.style.width = '60px';
+            mario.style.marginLeft = '40px';
+    
+            over.style.display = 'inline';
+            clearInterval(loop);
+        }
+        
+    }, 10);
+    
+    document.addEventListener('keydown', jump);
+}
 
-document.addEventListener('keydown', jump)
+function reload(){
+    window.location.reload();
+}
