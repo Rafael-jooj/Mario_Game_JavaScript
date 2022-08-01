@@ -3,7 +3,7 @@
 ![Badge Concluido](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
 ## Link do projeto/jogo (Git pages)
-
+https://rafael-jooj.github.io/Mario_Game_JavaScript/
 
 ## Descrição do Projeto
 <p>Esse projeto se trata de um mini jogo para navegador inspirado no jogo Mario utilizando HTML, CSS e JavaScript puro.</p> 
